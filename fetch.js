@@ -8,7 +8,6 @@ let links = [
     text: "Contacts",
     href: "#contacts",
     data: "contacts.json",
-    html: ""
   },
   {
     text: "Shop: Wolf Shack",
@@ -17,10 +16,15 @@ let links = [
 ];
 async function navLinks(id) {
   links.forEach(function(link) {
+    var target = "";
+    if (link.target !== undefined){
+      target = `target="${link.target}"`
+    }
     document.getElementById(
       id
-    ).innerHTML += `<li><a href="${link.href}">${link.text}</a></li>`;
-    if (link.data == undefined) {
+    ).innerHTML += `<li><a target href="${link.href}">${link.text}</a></li>`;
+
+    if (link.data !== undefined || link.data === "") {
       return;
     }
     fetch(link.data);
