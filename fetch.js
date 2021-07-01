@@ -7,7 +7,7 @@ let links = [
   {
     text: "Contacts",
     href: "#contacts",
-    data: "contacts.json",
+    data: "https://json.336.zone/contacts.json",
   },
   {
     text: "Shop: Wolf Shack",
