@@ -11,7 +11,8 @@ let links = [
   },
   {
     text: "Shop: Wolf Shack",
-    href: "https://336wolfshack.square.site/s/shop"
+    href: "https://336wolfshack.square.site/s/shop",
+    target: "_blank"
   }
 ];
 async function navLinks(id) {
