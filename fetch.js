@@ -9,6 +9,10 @@ let links = [
     href: "#contacts",
     data: "contacts.json",
     html: ""
+  },
+  {
+    text: "Shop: Wolf Shack",
+    href: "https://336wolfshack.square.site/s/shop"
   }
 ];
 async function navLinks(id) {
