@@ -1,4 +1,4 @@
-fetch("faq.json")
+fetch("https://json.336.zone/faq.json")
   .then(response => response.json())
   .then(async data => {
     data.forEach(val => {
