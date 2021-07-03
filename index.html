@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>336 - Red Wolves</title>
-    <base href="./">
+    <base href="/" />
     <link rel="icon" href="/redwolf-icon.png" type="image/gif" sizes="16x16" />
     <meta
       name="description"
@@ -13,11 +13,8 @@
     <meta name="author" content="A1C Leon Guerrero" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:title" content="336 TRS" />
-    <meta
-      property="og:url"
-      content="https://336.pages.dev/"
-    />
-    <meta property="og:image" content="/redwolf-icon.png" />
+    <meta property="og:url" content="https://336.zone/" />
+    <meta property="og:image" content="redwolf-icon.png" />
     <meta
       property="og:description"
       content="336 TRS - Red Wolves Website. Basic resources freely accessible."
@@ -37,6 +34,7 @@
     />
 
     <link type="text/css" rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!--Let browser know website is optimized for mobile-->
     <!--prefetch content-->
     <script src="fetch.js"></script>
@@ -44,7 +42,11 @@
   <body>
     <nav class="nav-extended black">
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Red Wolves</a>
+        <a href="#" class="brand-logo"
+          ><img
+            height="50px"
+            src="https://cdn.glitch.com/b432ae35-b9ab-4e9a-9e2c-213aeb800f9f%2Fredwolf.png?v=1624823135660"
+        /></a>
         <a href="#" data-target="mobile-links" class="sidenav-trigger"
           ><i class="material-icons">menu</i></a
         >
@@ -127,7 +129,7 @@
           </div>
         </div>
       </div>
-
+      <!--Site Pages-->
       <div class="row section page_section" id="contacts" style="display: none">
         <div class="section">
           <div class="input-field">
@@ -141,7 +143,25 @@
             <label for="search_contacts">Search Contacts</label>
           </div>
         </div>
-        <ul class="collapsible" id="contacts-list"></ul>
+        <ul
+          class="collapsible"
+          id="contacts-list"
+          data-collapsible="accordion"
+        ></ul>
+      </div>
+      <div class="row section page_section" id="faq" style="display: none">
+        <div class="section">
+          <input
+            placeholder="Search"
+            id="search_faq"
+            type="text"
+            onkeyup="searchData('search_faq', 'faq_list', 'UL')"
+          />
+          <label for="search_faq">Search FAQ</label>
+        </div>
+          <div class=""
+            id="faq_list"
+          ></div>
       </div>
     </main>
     <!--FOOTER----------------------------------------------------------------->
@@ -221,9 +241,9 @@
         </div>
       </div>
     </footer>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="contacts.js" async></script>
+    <script src="faq.js" async></script>
+    <script src="modules.js"></script>
     <script>
       M.AutoInit();
       hashCheck();
@@ -256,6 +276,9 @@
           }
         }
       }
+    </script>
+    <script defer>
+    M.AutoInit();
     </script>
   </body>
 </html>
