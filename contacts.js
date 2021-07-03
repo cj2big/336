@@ -8,7 +8,7 @@ var week = [
   "Sunday"
 ];
 //document.getElementsByTagName("MAIN")[0].innerHTML = '<div id="card-data" class="row"></div>'
-fetch("https://json.336.zone/contacts.json?2021.7.3.1220")
+fetch("https://json.336.zone/contacts.json?2021.7.3.1347")
   .then(response => response.json())
   .then(function(data) {
     var html = {};
