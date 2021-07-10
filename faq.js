@@ -18,11 +18,3 @@ fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vR7izqfiaPLsMd9TXs7vAbVde
   }
   searchUrl();
   });
-
-
-/*
-      <ul class="collection">
-        <li class="collection-item">${val.q}</li>
-        <li class="collection-item">${val.a}</li>
-      </ul>
-*/
