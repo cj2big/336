@@ -36,8 +36,42 @@
     <link type="text/css" rel="stylesheet" href="styles.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!--Let browser know website is optimized for mobile-->
-    <!--prefetch content-->
-    <script src="fetch.js?2021.7.3"></script>
+    <script>
+      let support = {
+        storage: true
+      };
+      let links = [
+        {
+          text: "Home",
+          href: "#"
+        },
+        {
+          text: "Contacts",
+          href: "#contacts"
+        },
+        {
+          text: "F.A.Q.",
+          href: "#faq"
+        },
+        {
+          text: "Files",
+          href: "#files"
+        },
+        {
+          text: "Wolf Shack",
+          href: "https://336wolfshack.square.site/s/shop",
+          type: "link",
+          target: "_blank"
+        },
+        {
+          text: "AF Portal",
+          href: "https://www.my.af.mil/",
+          type: "link",
+          target: "_blank"
+        }
+      ];
+    </script>
+    <script src="fetch.js"></script>
   </head>
   <body>
     <nav class="nav-extended black">
@@ -130,17 +164,18 @@
         </div>
       </div>
       <!--Site Pages-->
+      <!--Contacts-->
       <div class="row section page_section" id="contacts" style="display: none">
         <div class="section">
           <div class="input-field">
             <input
               placeholder="Search"
-              id="search_contacts"
+              id="contacts_search"
               type="text"
               onkeyup="searchContacts()"
               class=""
             />
-            <label for="search_contacts">Search Contacts</label>
+            <label for="contacts_search">Search Contacts</label>
           </div>
         </div>
         <ul
@@ -149,19 +184,29 @@
           data-collapsible="accordion"
         ></ul>
       </div>
+      <!--F.A.Q-->
       <div class="row section page_section" id="faq" style="display: none">
         <div class="section">
           <input
             placeholder="Search"
-            id="search_faq"
+            id="faq_search"
             type="text"
-            onkeyup="searchData('search_faq', 'faq_list', 'UL')"
+            onkeyup="searchData('faq_search', 'faq_list', 'UL')"
           />
-          <label for="search_faq">Search FAQ</label>
+          <label for="faq_search">Search FAQ</label>
         </div>
-          <div class=""
-            id="faq_list"
-          ></div>
+      </div>
+      <!--Files-->
+      <div class="row section page_section" id="files" style="display: none">
+        <div class="section">
+          <input
+            placeholder="Search"
+            id="files_search"
+            type="text"
+            onkeyup="searchTable('files_search', 'files_list', 'TR')"
+          />
+          <label for="files_search">Search Files</label>
+        </div>
       </div>
     </main>
     <!--FOOTER----------------------------------------------------------------->
@@ -241,11 +286,12 @@
         </div>
       </div>
     </footer>
-    <script src="contacts.js?2021.7.3" async></script>
+    <!--Scripts-->
+    <script src="contacts.js" async></script>
     <script src="faq.js" async></script>
-    <script src="modules.js?2021.7.3"></script>
+    <script src="files.js" async></script>
+    <script src="modules.js" async></script>
     <script>
-      M.AutoInit();
       hashCheck();
       window.addEventListener(
         "hashchange",
@@ -278,7 +324,7 @@
       }
     </script>
     <script defer>
-    M.AutoInit();
+      M.AutoInit();
     </script>
   </body>
 </html>

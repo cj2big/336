@@ -1,9 +1,9 @@
 function searchContacts() {
   // Declare variables
   var input, filter, ul, li, a, i, txtValue;
-  input = document.getElementById("search_contacts");
+  input = document.getElementById("contacts_search");
   filter = input.value.toUpperCase();
-  ul = document.getElementById("contacts-list");
+  ul = document.getElementById("contacts_list");
   li = ul.getElementsByTagName("li");
   // Loop through all list items, and hide those who don't match the search query
   for (i = 0; i < li.length; i++) {
@@ -19,7 +19,7 @@ function searchContacts() {
     }
   }
 }
-function searchData(input, target, list){
+function searchData(input, target, list) {
   // Declare variables
   var input, filter, ul, li, a, i, txtValue;
   input = document.getElementById(input);
@@ -40,5 +40,30 @@ function searchData(input, target, list){
     }
   }
 }
-
-//:D
+function searchTable(input, target, el) {
+  let filter, elm, x
+  input = document.getElementById(input)
+  filter = input.value.toUpperCase();
+  target = document.getElementById(target);
+  elm = target.getElementsByTagName(el);
+  
+  for(let i = 1; i < elm.length; i++){
+    x = elm[i].innerText || elm[i].textContent;
+    if(x.toUpperCase().indexOf(filter)> -1){
+      elm[i].style.display = "";
+    }else{
+      elm[i].style.display = "none";
+    }
+  }
+}
+/*
+        <div class="section">
+          <input
+            placeholder="Search"
+            id="search_faq"
+            type="text"
+            onkeyup="searchData('search_faq', 'faq_list', 'UL')"
+          />
+          <label for="search_faq">Search FAQ</label>
+        </div>
+*/
