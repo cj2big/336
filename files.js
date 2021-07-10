@@ -22,14 +22,19 @@ fetch(
     });
     y.innerHTML = z;
     th.appendChild(y);
+  let viewFile;
+    for(let i = 0; i < x.length; i++){
+      if(x[i] == "Link"){
+        viewFile = i
+      }
+    }
     for (let i = 1; i < data.length; i++) {
       z = "";
       x = data[i].split("\t");
       y = document.createElement("TR");
       for (let j = 0; j < x.length; j++) {
         let val = x[j]
-        console.log(val)
-        if(j == 2 && val !== ""){
+        if(viewFile == j && val !== ""){
          val = `<a target="_blank" href="${val}">View File</a>`
         }
         z += `<td>${val}</td>`;
@@ -40,15 +45,3 @@ fetch(
     }
   });
 
-/*
-    <table>
-      <tr>
-        <th></th>
-        <th></th>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
-*/
