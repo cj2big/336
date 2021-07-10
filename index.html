@@ -341,7 +341,7 @@ function searchUrl() {
     if (hash == "contacts") {
       searchContacts();
     } else if (hash == "faq") {
-      searchData(`${hash}_search`, `${hash}_list`, "UL");
+      searchTable(`${hash}_search`, `${hash}_list`, "UL");
     } else if (hash == "files") {
       searchTable(`${hash}_search`, `${hash}_list`, "TR");
     }
