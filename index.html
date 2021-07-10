@@ -288,6 +288,7 @@
           let x = hash.split("?");
           hash = x[0];
           search = x[1];
+          search = decodeURI(search);
         }
         if (search !== false) {
           document.getElementById(`${hash}_search`).value = search;
