@@ -334,7 +334,7 @@ function searchUrl() {
   if (hash.includes("?")) {
     let x = hash.split("?");
     hash = x[0];
-    search = x[1];
+    search = decodeURI(x[1]);
   }
   if (search !== false) {
     document.getElementById(`${hash}_search`).value = search;
