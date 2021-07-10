@@ -16,6 +16,7 @@ fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vR7izqfiaPLsMd9TXs7vAbVde
     `
     document.getElementById("faq_list").appendChild(y);
   }
+  searchUrl();
   });
 
 

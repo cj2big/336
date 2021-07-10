@@ -46,6 +46,7 @@ fetch(
       `
       document.getElementById("contacts_list").appendChild(y);
     }
+  searchUrl();
   M.AutoInit();
   });
 /*

@@ -43,5 +43,6 @@ fetch(
 
       tb.appendChild(y);
     }
+  searchUrl();
   });
 
