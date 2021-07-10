@@ -291,6 +291,63 @@
     <script src="contacts.js" async></script>
     <script src="faq.js" async></script>
     <script src="files.js" async></script>
+    <script>
+      hashCheck();
+window.addEventListener(
+  "hashchange",
+  function() {
+    hashCheck();
+  },
+  false
+);
+function hashCheck() {
+  console.log("checking hash");
+  var hash = location.hash.substr(1);
+  var search = false;
+  if (hash.includes("?")) {
+    var x = hash.split("?");
+    hash = x[0];
+  }
+  var pages = document.getElementsByClassName("page_section");
+  var target = "";
+  if (hash == "") {
+    target = "home";
+  }
+  for (let i = 0; i < pages.length; i++) {
+    if (hash == pages[i].id) {
+      pages[i].style.display = "";
+    } else if (hash == "") {
+      if (pages[i].id == "home") {
+        pages[i].style.display = "";
+      } else {
+        pages[i].style.display = "none";
+      }
+    } else {
+      pages[i].style.display = "none";
+    }
+  }
+  searchUrl();
+}
+function searchUrl() {
+  let hash = location.hash.substr(1);
+  let search = false;
+  if (hash.includes("?")) {
+    let x = hash.split("?");
+    hash = x[0];
+    search = x[1];
+  }
+  if (search !== false) {
+    document.getElementById(`${hash}_search`).value = search;
+    if (hash == "contacts") {
+      searchContacts();
+    } else if (hash == "faq") {
+      searchData(`${hash}_search`, `${hash}_list`, "UL");
+    } else if (hash == "files") {
+      searchTable(`${hash}_search`, `${hash}_list`, "TR");
+    }
+  }
+}
+    </script>
     <script defer>
       M.AutoInit();
     </script>
