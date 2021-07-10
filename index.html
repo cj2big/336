@@ -326,14 +326,15 @@
             pages[i].style.display = "none";
           }
         }
+        searchUrl();
       }
       function searchUrl() {
         let hash = location.hash.substr(1);
         let search = false;
-        if(hash.includes('?')){
-          let x = hash.split('?')
-          hash = x[0]
-          search = x[1]
+        if (hash.includes("?")) {
+          let x = hash.split("?");
+          hash = x[0];
+          search = x[1];
         }
         if (search !== false) {
           document.getElementById(`${hash}_search`).value = search;
