@@ -4,14 +4,17 @@
   //dynamic redirect to main site
     <script>
       var url = location.host;
-      var html = `https://${url}`;
+      var path = location.pathname.substr(1);
+      path = "#" + path;
+      var link = `https://${url}${path}`;
     </script>
-    <meta http-equiv="Refresh" content="0; url='/'" />
+    <!--meta http-equiv="Refresh" content="5; url='/'" /-->
   </head>
   <body>
     404 not found. If you are not redirected continue to this link: 
   </body>
   <script>
-    document.body.innerHTML += `<a href="/">${html}</a>`;
+    document.body.innerHTML += `<a href="/">${link}</a>`;
+    location.replace(link);
   </script>
 </html>
