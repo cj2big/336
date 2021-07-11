@@ -16,6 +16,10 @@ let links = [
     href: "#files"
   },
   {
+    text: "Q-Links",
+    href: "#quicklinks"
+  },
+  {
     text: "Wolf Shack",
     href: "https://336wolfshack.square.site/s/shop",
     type: "link",

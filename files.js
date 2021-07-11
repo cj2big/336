@@ -22,10 +22,10 @@ fetch(
     });
     y.innerHTML = z;
     th.appendChild(y);
-  let viewFile;
-    for(let i = 0; i < x.length; i++){
-      if(x[i] == "Link"){
-        viewFile = i
+    let viewFile;
+    for (let i = 0; i < x.length; i++) {
+      if (x[i] == "Link") {
+        viewFile = i;
       }
     }
     for (let i = 1; i < data.length; i++) {
@@ -33,9 +33,9 @@ fetch(
       x = data[i].split("\t");
       y = document.createElement("TR");
       for (let j = 0; j < x.length; j++) {
-        let val = x[j]
-        if(viewFile == j && val !== ""){
-         val = `<a target="_blank" href="${val}">View File</a>`
+        let val = x[j];
+        if (viewFile == j && val !== "") {
+          val = `<a target="_blank" href="${val}">View</a>`;
         }
         z += `<td>${val}</td>`;
       }
@@ -43,6 +43,5 @@ fetch(
 
       tb.appendChild(y);
     }
-  searchUrl();
+    searchUrl();
   });
-
